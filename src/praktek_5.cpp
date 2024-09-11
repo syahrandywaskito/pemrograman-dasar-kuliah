@@ -5,7 +5,7 @@ float lingkaran(float radius);
 int main()
 {
   
-  // float 6_05;
+  float ReInitialize;
   float celcius = 0.0f;
   std::cout << "\n1. Input suhu dalam celcius : "; std::cin >> celcius;
 

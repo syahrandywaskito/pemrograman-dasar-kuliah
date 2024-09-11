@@ -8,11 +8,11 @@ void division();
 
 int main()
 {
-  // ganjilGenap();
+  ganjilGenap();
   std::cout << std::endl;
-  // diskon();
+  diskon();
   std::cout << std::endl;
-  // prima();
+  prima();
   // prima2();
   std::cout << std::endl;
   division();
