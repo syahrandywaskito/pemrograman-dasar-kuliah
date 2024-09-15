@@ -100,8 +100,12 @@ void faktorial()
   std::cout << "n : "; std::cin >> n;
   for (int i = 1; i <= n; i++)
   {
-    std::cout << i << '*';
+    std::cout << i;
     result *= i;
+    if (i != n)
+    {
+      std::cout << " * ";
+    }
   }
   std::cout << " = " << result << std::endl;
 }
