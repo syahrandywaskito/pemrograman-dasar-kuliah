@@ -5,13 +5,15 @@ void n1();
 void n2();
 void n3();
 void n4();
+void lapres();
 
 int main()
 {
   // n1();
   // n2();
   // n3();
-  n4();
+  // n4();
+  lapres();
   return 0;
 }
 
@@ -101,4 +103,47 @@ void n4()
   std::cout << "jumlah kata : " << kata << std::endl;
   std::cout << "jumlah keseluruhan : " << total << std::endl; 
   
+}
+
+void lapres()
+{
+  std::string kalimat;
+  std::cout << "Masukan sebuah kalimat : "; std::getline(std::cin, kalimat);
+
+  int spasi = 0, kata = 0, total, i = 0, angka = 0, kecil, besar;
+
+  while (kalimat[i] != '\0')
+  {
+   
+    if (static_cast<int>(kalimat[i]) > 47 && (int)(kalimat[i]) <= 57)
+    {
+      angka++;
+    }
+    else if (static_cast<int>(kalimat[i]) > 64 && (int)(kalimat[i]) <= 90)
+    {
+      besar++;
+    }
+    else if (static_cast<int>(kalimat[i]) > 96 && static_cast<int>(kalimat[i]) <= 122)
+    {
+      kecil++;
+    }
+
+
+    if (kalimat[i] != ' ')
+    {
+      kata++;
+    }
+    else
+    {
+      spasi++;
+    }
+    i++;
+  }
+  total = spasi + kata;
+  std::cout << "jumlah spasi : " << spasi << std::endl;
+  std::cout << "jumlah kata : " << kata << std::endl;
+  std::cout << "jumlah huruf kecil : " << kecil << std::endl;
+  std::cout << "jumlah huruf besar : " << besar << std::endl;
+  std::cout << "jumlah karakter angka : " << angka << std::endl;
+  std::cout << "jumlah keseluruhan : " << total << std::endl; 
 }
