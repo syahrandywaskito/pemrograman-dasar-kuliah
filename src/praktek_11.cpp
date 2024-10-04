@@ -12,9 +12,9 @@ int main()
   
   // n1();
   // n2();
-  // n3();
+  n3();
   // n4();
-  lapres();
+  // lapres();
 
   return 0;
 }
@@ -61,7 +61,7 @@ void n3()
 {
   int n;
   std::cout << "n : "; std::cin >> n;  
-  for (int i = i; i < n; i++)
+  for (int i = 1; i < n; i++)
   {
     if ((i % 7) == 0 || (i % 11) == 0)
     {

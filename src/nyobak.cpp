@@ -16,9 +16,9 @@ int main(int argc, char const *argv[])
 
   while (biner > 0)
   {
-    desimal += (biner % 10) * pow(2, i);
+    desimal += (biner % 16) * pow(2, i);
     i++;
-    biner = biner / 10;
+    biner = biner / 16;
     
   }
   std::cout << desimal << std::endl;
