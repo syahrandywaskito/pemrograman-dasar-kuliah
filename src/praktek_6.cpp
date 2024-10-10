@@ -8,14 +8,14 @@ void division();
 
 int main()
 {
-  ganjilGenap();
-  std::cout << std::endl;
-  diskon();
+  // ganjilGenap();
+  // std::cout << std::endl;
+  // diskon();
   std::cout << std::endl;
   prima();
   // prima2();
-  std::cout << std::endl;
-  division();
+  // std::cout << std::endl;
+  // division();
 
   return 0;
 }
@@ -70,7 +70,7 @@ void prima()
   {
     for (int i = 2; i <= n / 2; i++) // menggunakan / 2 untuk membatasi iterasi
     {
-      // std::cout << n << " % " << i << " = " << n % i << std::endl;
+      std::cout << n << " % " << i << " = " << n % i << std::endl;
       if ((n % i) == 0)
       {
         // setelah modulo == 0 maka loop akan break
