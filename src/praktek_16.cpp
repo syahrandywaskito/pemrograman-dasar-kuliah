@@ -19,16 +19,16 @@ int kuadrat(int n)
   return n * n;
 }
 
-void kurang(int x, int y)
-{
-  int total = x - y;
-}
+
 
 /**
  * fungsi void jika diassign ke sebuah variable atau statement
  * maka akan error
  */
-
+void kurang(int x, int y)
+{
+  int total = x - y;
+}
 
 /**
  * semua nilai dari setiap line berjalan pada saat program dijalankan

@@ -12,7 +12,7 @@ void menu()
 
 void triangular(int n)
 {
-  int total;
+  int total = 0;
 
   for (int i = 1; i <= n; i++)
   {
@@ -23,16 +23,9 @@ void triangular(int n)
   
 }
 
-float kuadrat(float n, float exp)
+int kuadrat(int n)
 {
-  float total = 1;
-  for (int i = 1; i <= exp; i++)
-  {
-    total *= n;
-  }
-
-  return total;
-  
+  return n * n; 
 }
 
 int main(int argc, char const *argv[])
@@ -41,13 +34,13 @@ int main(int argc, char const *argv[])
   int n;
   std::cout << "n : "; std::cin >> n;
 
-  // for (int i = 1; i < n; i++)
+  // triangular(n);
+  // for (int i = 1; i < 5; i++)
   // {
   //   menu();
   // }
   
-  // triangular(n);
-  std::cout << "Nilai kuadrat dari " << n << " adalah " <<  kuadrat(static_cast<float>(n), 3.0f) << std::endl;
+  std::cout << "Nilai kuadrat dari " << n << " adalah " <<  kuadrat(n) << std::endl;
 
   return 0;
 }

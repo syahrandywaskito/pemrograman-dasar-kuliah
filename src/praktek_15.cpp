@@ -55,8 +55,6 @@ float kombinasi(float n, float r)
 }
 
 void tambahDua(int &a, int &b){
-  std::cout << "address a : " << &a << std::endl;
-  std::cout << "address b : " << &b << std::endl;
   a += 2;
   b += 2;
 }

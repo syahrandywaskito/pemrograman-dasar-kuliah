@@ -1,53 +1,88 @@
 #include <iostream>
 #include <string>
 
+void n1();
+void n2(int n);
+
 int main(int argc, char const *argv[])
+{
+  // n1();
+  
+  int n;
+  std::cout << "n : "; std::cin >> n;
+   
+   n2(n);
+
+  return 0;
+}
+
+void n1()
 {
   int jumlah_mahasiswa = 0;
   int jumlah_nilai = 0;
-  int count = 0;
-  
+  int nilai = 0;
 
   std::cout << "Jumlah mahasiswa : "; std::cin >> jumlah_mahasiswa;
 
-  // memuat array nama mahasiswa;
-  std::string nama[jumlah_mahasiswa];
-
-  // memuat array rata-rata sesuai dengan index nama;
-  float avarages[jumlah_mahasiswa];
-
-  float total = 0.0f;
-  // mencari perulangan mahasiswa
-  do
-  {
-    // input nama kepada array nama sesuai dengan index count
-    
-    int list = 0;
-    std::cout << "Nama mahasiswa " << " : "; std::cin >> nama[count];
-
-    // input jumlah nilai untuk digunakan sebagai loop dan jumlah pada array dimensi kedua di array nilai[]
-    std::cout << "Jumlah nilai = "; std::cin >> jumlah_nilai;
-
-    // deklarasi array nilai dengan baris sebesar jumlah_mahasiswa, dan kolom sebesar jumlah nilai yang diinputkan sebelumnya
-    float nilai[jumlah_mahasiswa][jumlah_nilai];
-
-    // loop untuk memasukkan nilai kedalam array kemudian ditambahkan
-    // untuk dicari rata-rata
-    for (int i = 0; i < jumlah_nilai; i++)
-    {
-      std::cout << "Input nilai ke-" << i << " = "; std::cin >> nilai[count][i];
-      total += nilai[count][i];
-      
-    }
-    avarages[jumlah_mahasiswa] = total / static_cast<float>(jumlah_nilai);
-
-    count++;
-  } while (count > 0);
+  std::string nama_mahasiswa[jumlah_mahasiswa];
+  int avarage[jumlah_mahasiswa];
   
   for (int i = 0; i < jumlah_mahasiswa; i++)
   {
-    std::cout << "Nilai rata-rata : " << nama[i] << " adalah " << avarages[i]; 
+    int total_nilai = 0;
+
+    std::cout << "Nama mahasiswa : "; 
+    std::cin >> nama_mahasiswa[i];
+    std::cout << "Jumlah nilai : "; std::cin >> jumlah_nilai;
+    
+    for (int j = 0; j < jumlah_nilai; j++)
+    {
+      int list_temp = j + 1;
+      std::cout << "Input nilai ke-" << list_temp << " : ";
+      std::cin >> nilai;
+
+      total_nilai += nilai;  
+    }
+    
+    avarage[i] = total_nilai / jumlah_nilai;;
   }
 
-  return 0;
+  for (int i = 0; i < jumlah_mahasiswa; i++)
+  {
+    std::cout << "Rata-rata " << nama_mahasiswa[i];
+    std::cout << " adalah " << avarage[i] << std::endl;
+  }
+  
+}
+
+void n2(int n)
+{
+  int list[6][7][7] = {0};
+
+  for (int i = 0; i < 6; i++)
+  {
+    for (int j = 0; j < 7; j++)
+    {
+      if (j == 3)
+      {
+        list[i][j][3] = n;
+      }
+      
+    }
+    
+  }
+
+  for (int i = 0; i < 6; i++)
+  {
+    for (int j = 0; j < 7; j++)
+    {
+      for (int k = 0; k < 7; k++)
+      {
+        std::cout << list[i][j][k] << " ";
+      }
+      std::cout << std::endl;
+    }
+  }
+  
+  
 }
