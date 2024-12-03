@@ -14,6 +14,7 @@ void pengurangan(Bilangan* operand_1, Bilangan* operand_2, Bilangan* hasil , int
 
 void perkalian(Bilangan* operand_1, Bilangan* operand_2, Bilangan* hasil , int oprnd1_len, int oprnd2_len, int* counter);
 
+void turunan(Bilangan* bilangan, Bilangan* hasil, int bil_len);
 
 int power(int base, int exponen);
 
@@ -212,7 +213,33 @@ int main(int argc, char const *argv[])
     loop_len = counter;
     break;
 
+  case 4:
+    std::cout << "Masukan P yang akan diturunkan : ";
+    std::cin >> pil_bilangan;
+    switch (pil_bilangan)
+    {
+    case 1:
+      oprnd1_p = P1;
+      oprnd1_len = sizeof(P1)/sizeof(P1[0]);
+      break;
+    case 2:
+      oprnd1_p = P2;
+      oprnd1_len = sizeof(P2)/sizeof(P2[0]);
+      break;
+    case 3:
+      oprnd1_p = P3;
+      oprnd1_len = sizeof(P3)/sizeof(P3[0]);
+      break;
+    default:
+      std::cout << "Bilangan tidak ada !!\n";
+      break;
+    }
+    turunan(oprnd1_p, hasil_operasi, oprnd1_len);
+    loop_len = oprnd1_len;
+    break;
+
   default:
+    std::cout << "Pilihan operasi tidak ada !!\n";
     break;
   }
 
@@ -237,7 +264,7 @@ int main(int argc, char const *argv[])
           std::cout << "^" << hasil_operasi[i].exponen;
       }
       
-      if (hasil_operasi[i+1].konstanta != 0)
+      if (hasil_operasi[i+1].konstanta != 0 || hasil_operasi[i+2].konstanta != 0)
       {
           std::cout << " + ";
       }
@@ -259,12 +286,12 @@ int main(int argc, char const *argv[])
     if (hasil_operasi[i].konstanta != 0)
     {
       konstanta =  hasil_operasi[i].konstanta;
-      std::cout << konstanta;
+      // std::cout << konstanta;
 
       if (hasil_operasi[i].variabel == 0 && hasil_operasi[i].variabel < 1)
       {
           variabel = nilai_x;
-          std::cout << "(" << variabel << ")";
+          // std::cout << "(" << variabel << ")";
       }
       else
       {
@@ -274,20 +301,20 @@ int main(int argc, char const *argv[])
       if (hasil_operasi[i].exponen != 1)
       {
           exponen = hasil_operasi[i].exponen;
-          std::cout << "^" << exponen;
+          // std::cout << "^" << exponen;
       }
       else
       {
           exponen = 1;
       }
       
-      hasil_akhir += power((konstanta * variabel), exponen);
-      std::cout << " {" << hasil_akhir << "} ";
+      hasil_akhir += konstanta * power(variabel, exponen);
+      // std::cout << " {" << hasil_akhir << "} ";
       
-      if (hasil_operasi[i+1].konstanta != 0)
-      {
-          std::cout << " + ";
-      }
+      // if (hasil_operasi[i+1].konstanta != 0)
+      // {
+      //     std::cout << " + ";
+      // }
     }
   }
 
@@ -496,11 +523,9 @@ void perkalian(Bilangan* operand_1, Bilangan* operand_2, Bilangan* hasil , int o
           kali[*counter].konstanta = operand_1[j].konstanta * operand_2[k].konstanta;
           kali[*counter].variabel = 0;
           kali[*counter].exponen = operand_1[j].exponen + operand_2[k].exponen;
-          // std::cout << kali[*counter].konstanta << "(" << kali[*counter].variabel << ")" << "^" << kali[*counter].exponen << std::endl;
+          // std:: << kali[*counter].konstanta << "(" << kali[*counter].variabel << ")" << "^" << kali[*counter].exponen << std::endl;
           // std::cout << "Kondisi 4 | operand 1 & 2 = bukan satuan \n";
         }
-        
-
         
         // std::cout << kali[j].konstanta << "(" << kali[j].variabel << ")" << "^" << kali[j].exponen << std::endl;
         // std::cout << "-----\n";
@@ -547,4 +572,25 @@ void perkalian(Bilangan* operand_1, Bilangan* operand_2, Bilangan* hasil , int o
         }
         idx++; // Pindah ke elemen berikutnya di hasil
   }
+}
+
+void turunan(Bilangan* bilangan, Bilangan* hasil, int bil_len)
+{
+  for (int i = 0; i < bil_len; i++)
+  {
+    if (bilangan[i].variabel == 1 && bilangan[i].exponen == 1)
+    {
+      hasil[i].konstanta = 0;
+      hasil[i].variabel = bilangan[i].variabel - 1;
+      hasil[i].exponen = bilangan[i].exponen - 1;
+    }
+    else
+    {
+      hasil[i].konstanta = bilangan[i].konstanta * bilangan[i].exponen;
+      hasil[i].variabel = bilangan[i].variabel;
+      hasil[i].exponen = bilangan[i].exponen - 1;
+    }
+    
+  }
+
 }

@@ -1,0 +1,23 @@
+Matakuliah ke 1
+SKS : 3
+Harkat : 4
+
+Matakuliah ke 2
+SKS : 2
+Harkat : 3
+
+Matakuliah ke 3
+SKS : 6
+Harkat : 4
+
+Matakuliah ke 4
+SKS : 3
+Harkat : 3
+
+Matakuliah ke 5
+SKS : 2
+Harkat : 4
+
+
+Total SKS		: 16
+IP Semester		: 3.687500
