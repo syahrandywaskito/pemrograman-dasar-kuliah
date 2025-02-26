@@ -84,6 +84,12 @@ int main(int argc, char const *argv[])
 
       std::cout << "IP Semester\t\t: " << ip_akhir << std::endl;
       fprintf(fptr, "IP Semester\t\t: %f\n", ip_akhir);
+
+      if (ip_akhir >= 1.00f)
+      {
+        std::cout << "E" << std::endl;
+      }
+      
     }
     else
     {
