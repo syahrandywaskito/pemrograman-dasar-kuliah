@@ -41,14 +41,56 @@ void addQuest(Quest*& head, std::string questName)
 
 // Quest* deleteQuest()
 
-void questFinish(std::string questName)
+void questFinish(Quest*& head ,std::string questName)
 {
+  if (head == null)
+  {
+    return;
+  }
+
   // todo : mengambil list head dan cari quest yang sudah selesai kemudian hapus quest
+  Quest* temp = head;
+  // mengecek apakah temp bukan null
+  while (temp)
+  {
+
+    // saat menghapus maka ubah dulu head ke nextnya kemudian delete temp
+
+    // todo : cek apakah quest name parameter sama dengan quest name dari head 
+    if (temp->quesName == questName)
+    {
+      std::cout << "quest " << questName << " telah dihapus" << std::endl;
+      head = head->next; // ubah head ke next nya atau geser head
+      delete temp; // hapus temp
+      return; // kembalikan fungsi
+    }
+
+    // masukkan nextnya;
+    temp = temp->next;
+  }
+  
+}
+
+void showQuestList(Quest*& head)
+{
+    // temp akam berfungsi sebagai variabel untuk memanipulasi link
+    // tanpa harus merubah head yang asli
+
+    Quest* temp = head; 
+    while (temp)
+    {
+      std::cout << "* Quest name : " << temp->quesName << std::endl;
+      temp = temp->next // ambil next list
+    }
+    std::cout << "* list end" << std::endl;
+    
 }
 
 
 int main(int argc, char const *argv[])
 {
+  
+  Quest* lisQuest = nullptr; // deklarasi awal
   
   
 
