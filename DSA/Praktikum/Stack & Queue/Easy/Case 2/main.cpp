@@ -21,21 +21,30 @@ bool isEmpty(Player*& head)
   return ((head == nullptr) ? true : false);
 }
 
-void enqueue(Player*& head, Player*& tail, std::string playerName)
+void enqueue(Player*& head, Player*& tail, std::string playerName = "")
 {
-  Player* newNode = createPlayer(playerName);
-  std::cout << "Enqueue : " << playerName << std::endl;
-
-  if (isEmpty(head))
+  if (playerName != "")
   {
-    head = newNode;
-    tail = newNode;
+    Player* newNode = createPlayer(playerName);
+    /* code */
+    std::cout << "Enqueue : " << playerName << std::endl;
+  
+    if (isEmpty(head))
+    {
+      head = newNode;
+      tail = newNode;
+    }
+    else
+    {
+      tail->next = newNode;
+      tail = newNode;
+    }
   }
   else
   {
-    tail->next = newNode;
-    tail = newNode;
+    std::cout << "Invalid Player name\n";
   }
+  
   
 }
 
@@ -82,7 +91,7 @@ int main(int argc, char const *argv[])
   // enqueue(head, tail, "Player1");
   // enqueue(head, tail, "Player2");
   // enqueue(head, tail, "Player3");
-  // enqueue(head, tail, "Player4");
+  enqueue(head, tail);
 
   // std::cout << std::endl;
   // front(head);
@@ -92,19 +101,25 @@ int main(int argc, char const *argv[])
   // dequeue(head);
   // dequeue(head);
 
-  std::string indexPlayer = "";
-  for (int i = 1; i <= 1000; i++)
-  {
-    indexPlayer = std::to_string(i);
-    enqueue(head, tail, ("Player" + indexPlayer));
-  }
+  // std::string indexPlayer = "";
+  // for (int i = 1; i <= 1000; i++)
+  // {
+  //   indexPlayer = std::to_string(i);
+  //   enqueue(head, tail, ("Player" + indexPlayer));
+  // }
+
+  // for (int i = 1; i <= 1000; i++)
+  // {
+  //   dequeue(head);
+  // }
+  
   
   // proses setelah di loop sebanyak 1000 kali
 
-  int lastIndex = 1000;
-  lastIndex++;
-  indexPlayer = std::to_string(lastIndex);
-  enqueue(head, tail, ("Player" + indexPlayer));
+  // int lastIndex = 1000;
+  // lastIndex++;
+  // indexPlayer = std::to_string(lastIndex);
+  // enqueue(head, tail, ("Player" + indexPlayer));
 
   return 0;
 }

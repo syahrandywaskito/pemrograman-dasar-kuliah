@@ -103,7 +103,7 @@ int main(int argc, char const *argv[])
 
   enqueue(h_event, t_event, "Spawn Enemy", 10);
   enqueue(h_event, t_event, "Trigger Cutscene", 20);
-  enqueue(h_event, t_event, "Spawn Bonus", 30);
+  enqueue(h_event, t_event, "Spawn Bonus", -40);
 
   printEventList(h_event);
   

@@ -169,28 +169,29 @@ int main(int argc, char const *argv[])
   // addToInventory(h_Inventory, t_Inventory);
   // addToInventory(h_Inventory, t_Inventory, "Sword");
   // addToInventory(h_Inventory, t_Inventory, "Potion");
-  addToInventory(h_Inventory, t_Inventory, "Health Potion");
-  addToInventory(h_Inventory, t_Inventory, "Health Potion");
-  addToInventory(h_Inventory, t_Inventory, "Health Potion");
-  addToInventory(h_Inventory, t_Inventory, "Health Potion");
+  // addToInventory(h_Inventory, t_Inventory, "Health Potion");
+  // addToInventory(h_Inventory, t_Inventory, "Health Potion");
+  // addToInventory(h_Inventory, t_Inventory, "Health Potion");
+  // addToInventory(h_Inventory, t_Inventory, "Health Potion");
 
   // printInventory(h_Inventory);
 
-  std::cout << std::endl;
-  top(h_Inventory, t_Inventory);
+  // std::cout << std::endl;
+  // top(h_Inventory, t_Inventory);
 
-  std::cout << std::endl;
-  useItem(h_Inventory, t_Inventory);
-  useItem(h_Inventory, t_Inventory);
-  useItem(h_Inventory, t_Inventory);
-  useItem(h_Inventory, t_Inventory);
+  // std::cout << std::endl;
+  // useItem(h_Inventory, t_Inventory);
+  // useItem(h_Inventory, t_Inventory);
+  // useItem(h_Inventory, t_Inventory);
+  // useItem(h_Inventory, t_Inventory);
   // useItem(h_Inventory, t_Inventory);
 
   std::cout << std::endl;
-  top(h_Inventory, t_Inventory);
+  // top(h_Inventory, t_Inventory);
   
-  std::cout << "\nUndo used item : \n";
+  // std::cout << "\nUndo used item : \n";
   addToInventory(h_Inventory, t_Inventory, "Health Potion");
+  useItem(h_Inventory, t_Inventory);
 
   std::cout << std::endl;
   top(h_Inventory, t_Inventory);
@@ -219,12 +220,12 @@ int main(int argc, char const *argv[])
   // printInventory(h_Inventory);
 
   // menambahkan item dengan urutan ke dalam inventory
-  // std::string indexItem = "";
-  // for (int i = 1; i <= 1000; i++)
-  // {
-  //   indexItem = std::to_string(i);
-  //   addToInventory(h_Inventory, t_Inventory, ("Berry " + indexItem));
-  // }
+  std::string indexItem = "";
+  for (int i = 1; i <= 1000; i++)
+  {
+    indexItem = std::to_string(i);
+    addToInventory(h_Inventory, t_Inventory, ("Berry " + indexItem));
+  }
   
   // proses setelah di loop sebanyak 1000 kali
 

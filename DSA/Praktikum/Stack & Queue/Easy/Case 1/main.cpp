@@ -65,10 +65,10 @@ void addFirst(SaveGame*& head, SaveGame*& tail, int state)
   if (head == nullptr)
   {
     head = newNode;
-    std::cout << "head : " << head->saveGameState << std::endl;
+    // std::cout << "head : " << head->saveGameState << std::endl;
 
     tail = newNode;
-    std::cout << "tail : " << tail->saveGameState << std::endl;
+    // std::cout << "tail : " << tail->saveGameState << std::endl;
   }
   // jika head tidak kosong maka
   else
@@ -186,13 +186,13 @@ int main(int argc, char const *argv[])
   // push(head, tail, 1);
   // push(head, tail, 2);
 
-  addFirst(head, tail, 1);
-  addFirst(head, tail, 2);
-  addFirst(head, tail, 3);
+  // addFirst(head, tail, 1);
+  // addFirst(head, tail, 2);
+  // addFirst(head, tail, 3);
 
-  printSaveList(head);
+  // printSaveList(head);
 
-  top(head, tail);
+  // top(head, tail);
 
   // std::cout << std::endl;
 
@@ -200,7 +200,7 @@ int main(int argc, char const *argv[])
 
   // std::cout << std::endl;
 
-  // pop(head);
+  pop(head);
   // pop(head);
   // pop(head);
 
